@@ -1,0 +1,15 @@
+[theme]
+# Primary accent color (Green)
+primaryColor = "#2E7D32" 
+
+# Background color (White)
+backgroundColor = "#FFFFFF" 
+
+# Secondary background for sidebar and cards (Light Mint/Green)
+secondaryBackgroundColor = "#F1F8E9" 
+
+# Text color (Dark Green/Black for high contrast)
+textColor = "#1B5E20" 
+
+# Font family
+font = "sans serif"
