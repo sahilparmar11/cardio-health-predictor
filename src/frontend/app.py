@@ -23,9 +23,13 @@ st.markdown(load_css(), unsafe_allow_html=True)
 # --- Helper Functions ---
 @st.cache_data
 def load_data_resources():
-    DATA_PATH = "../../data/cardio_preprocessed.csv"
-    MODEL_PATH = "../../notebooks/best_logistic_model.pkl"
-    SCALER_PATH = "../../notebooks/scaler.pkl"
+    # Resolve paths relative to this script file
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+    PROJECT_ROOT = os.path.join(BASE_DIR, "..", "..")
+    
+    DATA_PATH = os.path.join(PROJECT_ROOT, "data", "cardio_preprocessed.csv")
+    MODEL_PATH = os.path.join(PROJECT_ROOT, "notebooks", "best_logistic_model.pkl")
+    SCALER_PATH = os.path.join(PROJECT_ROOT, "notebooks", "scaler.pkl")
     
     if not os.path.exists(DATA_PATH):
         return None, None, None, f"Data file not found at {DATA_PATH}"
