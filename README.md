@@ -1,66 +1,84 @@
-# Cardiovascular Disease Prediction UI
+# ❤️ Cardiovascular Health Predictor
 
-This project provides a web-based UI for predicting cardiovascular disease based on user inputs using a trained machine learning model.
+A modern, web-based application utilizing Machine Learning to predict cardiovascular disease risk. Built with a powerful **FastAPI** backend and a stylish **Streamlit** frontend.
 
-## Project Structure
+## ✨ Features
 
-- `backend/`: Flask API for model predictions
-- `cardio-ui/`: React frontend
-- `data/`: Dataset files
-- `notebooks/`: Jupyter notebooks for model training and evaluation
+*   **Multi-Page Interface**:
+    *   **📊 Dashboard**: Interactive insights into the training dataset using Plotly charts.
+    *   **🩺 Assessment**: Real-time CVD risk prediction form for users.
+    *   **📈 Analytics**: Deep dive into model performance (Confusion Matrix, Feature Importance, Accuracy).
+*   **Modern UI/UX**:
+    *   Fully responsive design with a "Glassmorphism" aesthetic.
+    *   **Dark/Light Mode** toggle with custom high-contrast medical themes.
+    *   Interactive charts and dynamic metric cards.
+*   **Machine Learning**:
+    *   Powered by a **Logistic Regression** model (approx. 73% accuracy).
+    *   Data preprocessing and scaling pipelines included.
 
-## Setup
+## 🛠️ Tech Stack
 
-### Backend
+*   **Frontend**: Streamlit, Plotly, Streamlit-Option-Menu
+*   **Backend**: FastAPI, Uvicorn
+*   **ML Engine**: Scikit-Learn, Pandas, NumPy, Joblib
+*   **Visualization**: Plotly Express, Seaborn. Matplotlib
 
-1. Navigate to the backend directory:
-   ```
-   cd backend
-   ```
+## 🚀 Quick Start
 
-2. Install dependencies:
-   ```
-   pip install -r requirements.txt
-   ```
+### Prerequisites
+*   Python 3.9+
+*   Git
 
-3. Run the Flask app:
-   ```
-   python app.py
-   ```
-   The API will be available at http://localhost:5000
+### 1. Clone the Repository
+```bash
+git clone https://github.com/sahilparmar11/cardio-health-predictor.git
+cd cardio-health-predictor
+```
 
-### Frontend
+### 2. Set Up Environment
+It is recommended to use a virtual environment.
+```bash
+python -m venv venv
+# Windows
+.\venv\Scripts\activate
+# Mac/Linux
+source venv/bin/activate
+```
 
-1. Navigate to the cardio-ui directory:
-   ```
-   cd cardio-ui
-   ```
+### 3. Install Dependencies
+```bash
+pip install -r requirements.txt
+```
 
-2. Install dependencies:
-   ```
-   npm install
-   ```
+### 4. Run the Application
+You can run the Streamlit frontend directly (for Dashboard/Analytics features):
+```bash
+streamlit run src/frontend/app.py
+```
 
-3. Start the React app:
-   ```
-   npm start
-   ```
-   The UI will be available at http://localhost:3000
+*To enable the prediction API, you must also run the backend:*
+```bash
+uvicorn src.backend.main:app --reload
+```
 
-## Usage
+## 📂 Project Structure
 
-1. Start both the backend and frontend servers.
-2. Open the React app in your browser.
-3. Fill in the form with the required health metrics.
-4. Click "Predict" to get the cardiovascular disease prediction.
+```
+├── data/                   # Dataset (csv)
+├── notebooks/              # Jupyter Notebooks for training & analysis
+├── src/
+│   ├── backend/            # FastAPI Application
+│   └── frontend/           # Streamlit Web Interface
+│       ├── app.py          # Main Application Entry
+│       └── styles.py       # Custom CSS Styling
+├── requirements.txt        # Project Dependencies
+└── README.md               # Documentation
+```
 
-## Features
+## ☁️ Deployment
 
-- User-friendly form with dropdowns and inputs
-- Real-time prediction from the ML model
-- Displays prediction result and probability
-- CORS enabled for seamless frontend-backend communication
+*   **Frontend**: Deployed on [Streamlit Community Cloud](https://streamlit.io/cloud).
+*   **Backend**: Ready for deployment on [Render](https://render.com) or [Railway](https://railway.app).
 
-## Model Details
-
-The model is a Logistic Regression classifier trained on cardiovascular disease data. It takes 11 features as input and predicts whether the person has cardiovascular disease or not.
+## 📄 License
+This project is open-source and available under the MIT License.
